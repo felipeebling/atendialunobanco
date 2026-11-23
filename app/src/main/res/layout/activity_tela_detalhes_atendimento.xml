@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".TelaDetalhesAtendimento">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detalhes do atendimento"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#018D3E"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tvDetalhesInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agendado\nOrientação de TCC\nParticipantes: Arthur, Bernardo e Felipe\nData: 14/11/2026 · 10h–11h\nDuração: 60 minutos\nDisciplina: Projeto Integrador\nModalidade: Remoto · link Meet\nTipo: Orientação de TCC"
+        android:textSize="14sp"
+        android:textColor="#333333"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnEditarAtendimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Editar atendimento"
+        android:backgroundTint="#018D3E"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnCancelarAtendimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar atendimento"
+        style="?attr/materialButtonOutlinedStyle"
+        android:textColor="#D32F2F" />
+
+</LinearLayout>

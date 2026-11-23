@@ -5,15 +5,33 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_light_2"
+    android:padding="24dp"
     tools:context=".TelaLogin">
+
     <TextView
         android:id="@+id/tvTitleLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bem-vindo"
-        android:textSize="28sp"
+        android:layout_marginTop="68dp"
+        android:text="tendiAluno"
+        android:textColor="@color/primary_green"
+        android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLabelEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="E-mail institucional"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="@color/text_dark"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="48dp" />
@@ -22,30 +40,62 @@
         android:id="@+id/etEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="E-mail"
+        android:hint="professor@iffar.edu.br"
         android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@id/tvTitleLogin"
+        android:autofillHints="emailAddress"
+        android:backgroundTint="@color/primary_green"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelEmail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tvLabelSenha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Senha"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="@color/text_dark"
+        app:layout_constraintTop_toBottomOf="@id/etEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
 
     <EditText
         android:id="@+id/etSenha"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Senha"
+        android:hint="••••••••"
         android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/etEmail"
+        android:autofillHints="password"
+        android:backgroundTint="@color/primary_green"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelSenha"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tvEsqueciSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Esqueci minha senha"
+        android:textColor="@color/primary_green"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/etSenha"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="Entrar"
-        app:layout_constraintTop_toBottomOf="@id/etSenha"
+        android:textSize="16sp"
+        android:backgroundTint="@color/primary_green"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/tvEsqueciSenha"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="24dp" />
@@ -53,12 +103,25 @@
     <Button
         android:id="@+id/btnCadastrar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="Cadastrar-se"
+        android:textSize="16sp"
         style="?attr/materialButtonOutlinedStyle"
+        app:strokeColor="@color/primary_green"
+        android:textColor="@color/primary_green"
         app:layout_constraintTop_toBottomOf="@id/btnLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="12dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="116dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/atendialuno_logo_sem_quadrado_transparente" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

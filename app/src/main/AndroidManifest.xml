@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppDeuNojo">
+        android:theme="@style/Theme.atendialunobanco">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -18,7 +18,7 @@
         <activity
             android:name=".TelaAnuncie"
             android:exported="false"
-            android:theme="@style/Theme.AppDeuNojo"
+            android:theme="@style/Theme.atendialunobanco"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".TelaClassificados"
@@ -44,6 +44,38 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".TelaCadastro"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".TelaRecuperarSenha"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".TelaHome"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".TelaGerenciarUsuarios"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".TelaNovoAtendimento"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".TelaDetalhesAtendimento"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".TelaCancelarAtendimento"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".TelaHistoricoAtendimentos"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".TelaRegistroResultado"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

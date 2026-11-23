@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".TelaCancelarAtendimento">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar atendimento"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#D32F2F"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Motivo do cancelamento *"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/etMotivoCancelamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descreva a justificativa para o cancelamento..."
+        android:inputType="textMultiLine"
+        android:lines="4"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnConfirmarCancelamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirmar cancelamento"
+        android:backgroundTint="#D32F2F"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnManterAtendimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manter atendimento"
+        style="?attr/materialButtonOutlinedStyle" />
+
+</LinearLayout>

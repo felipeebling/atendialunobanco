@@ -1,52 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/background_light_2"
     tools:context=".TelaCadastro">
 
-
-    <TextView
-        android:id="@+id/textView2"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="Cadastre-se usuario!" />
+        android:orientation="vertical"
+        android:padding="20dp">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="‹ Novo usuário"
+            android:textSize="16sp"
+            android:textColor="@color/primary_green"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Digite seu Usuario:" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CADASTRO DE USUÁRIO"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_green"
+            android:layout_marginBottom="4dp" />
 
-    <EditText
-        android:id="@+id/edUsuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="* Indica perguntas obrigatórias."
+            android:textSize="12sp"
+            android:textColor="@color/text_gray"
+            android:layout_marginBottom="16dp" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Digite sua Senha:" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Identificação"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_dark_green"
+            android:layout_marginBottom="8dp" />
 
-    <EditText
-        android:id="@+id/edSenha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome completo *"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:textColor="@color/text_dark"
+            android:layout_marginBottom="4dp" />
 
+        <EditText
+            android:id="@+id/edNomeCompleto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Felipe Ebling"
+            android:inputType="textPersonName"
+            android:autofillHints="name"
+            android:layout_marginBottom="12dp" />
 
-    <Button
-        android:id="@+id/btnCadastrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cadastrar" />
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Identificação institucional *"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:textColor="@color/text_dark"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/edIdentificacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="2026000111"
+            android:inputType="text"
+            android:autofillHints="username"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Acesso inicial"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_dark_green"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="E-mail *"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:textColor="@color/text_dark"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/edEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="exemplo@iffar.edu.br"
+            android:inputType="textEmailAddress"
+            android:autofillHints="emailAddress"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Senha inicial *"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:textColor="@color/text_dark"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/edSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="••••••••"
+            android:inputType="textPassword"
+            android:autofillHints="password"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirme a senha *"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:textColor="@color/text_dark"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/edConfirmaSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="••••••••"
+            android:inputType="textPassword"
+            android:autofillHints="password"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Perfil de acesso *"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:textColor="@color/text_dark"
+            android:layout_marginBottom="4dp" />
+
+        <RadioGroup
+            android:id="@+id/rgPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rbAluno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aluno"
+                android:checked="true"
+                android:layout_marginEnd="32dp" />
+
+            <RadioButton
+                android:id="@+id/rbProfessor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Professor" />
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/cbConferencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirmo que li e revisei todos os meus dados *"
+            android:textColor="@color/text_dark"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/btnCadastrar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Cadastrar"
+            android:backgroundTint="@color/primary_green"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</ScrollView>

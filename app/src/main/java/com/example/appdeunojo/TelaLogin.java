@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -16,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class TelaLogin extends AppCompatActivity {
     private EditText etEmail, etSenha;
     private Button btnLogin, btnCadastrar;
+    private TextView tvEsqueciSenha;
     private SQLiteDatabase db;
     private conectadb banco;
 
@@ -33,11 +35,16 @@ public class TelaLogin extends AppCompatActivity {
         etSenha = findViewById(R.id.etSenha);
         btnLogin = findViewById(R.id.btnLogin);
         btnCadastrar = findViewById(R.id.btnCadastrar);
+        tvEsqueciSenha = findViewById(R.id.tvEsqueciSenha);
         banco = new conectadb(TelaLogin.this);
         SQLiteDatabase db = banco.getWritableDatabase();
 
         btnLogin.setOnClickListener(v -> realizarLogin());
         btnCadastrar.setOnClickListener(v -> realizarCadastro());
+        tvEsqueciSenha.setOnClickListener(v -> {
+            Intent intent = new Intent(this, TelaRecuperarSenha.class);
+            startActivity(intent);
+        });
 
     }
 
@@ -49,10 +56,17 @@ public class TelaLogin extends AppCompatActivity {
             Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
             return;
         }
-        usuariocontrole user = new usuariocontrole(TelaLogin.this);
+        ProfessoresController controller = new ProfessoresController(this);
 
-        if ( user.login(email,senha)){
-            Intent intent = new Intent(this, MainActivity.class);
+            Professores professor = controller.PFlogin(email, senha);
+
+
+
+        if (professor != null && professor.getEmail() != null){
+            Intent intent = new Intent(this, TelaHome.class);
+            intent.putExtra("professor", professor);
+
+
             startActivity(intent);
             finish();
         }else{

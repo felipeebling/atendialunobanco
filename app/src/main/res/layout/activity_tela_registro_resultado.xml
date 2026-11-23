@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".TelaRegistroResultado">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registro de resultado"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#018D3E"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Situação do atendimento *"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:layout_marginBottom="4dp" />
+
+        <RadioGroup
+            android:id="@+id/rgSituacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Realizado conforme o previsto"
+                android:checked="true" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Realizado parcialmente" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estudante não compareceu" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancelado" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Conteúdo / assunto tratado *"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/etConteudo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descreva o conteúdo tratado..."
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Atividades realizadas *"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/etAtividades"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descreva as atividades realizadas..."
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/btnSalvarResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salvar Resultado"
+            android:backgroundTint="#018D3E"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_vertical"
+    android:background="@color/background_light_2"
+    tools:context=".TelaRecuperarSenha">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Solicitar recuperação de senha"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary_green"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Informe o e-mail vinculado à conta"
+        android:textSize="14sp"
+        android:textColor="@color/text_gray"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="E-mail institucional *"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:layout_marginBottom="6dp" />
+
+    <EditText
+        android:id="@+id/etEmailRecuperacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="professor@iffar.edu.br"
+        android:inputType="textEmailAddress"
+        android:autofillHints="emailAddress"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirme o E-mail *"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:layout_marginBottom="6dp" />
+
+    <EditText
+        android:id="@+id/etConfirmaEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="professor@iffar.edu.br"
+        android:inputType="textEmailAddress"
+        android:autofillHints="emailAddress"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnSolicitarRecuperacao"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Solicitar recuperação de senha"
+        android:backgroundTint="@color/primary_green"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnVoltarLogin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Voltar ao Login"
+        style="?attr/materialButtonOutlinedStyle"
+        android:textColor="@color/primary_green"
+        android:textSize="16sp" />
+
+</LinearLayout>

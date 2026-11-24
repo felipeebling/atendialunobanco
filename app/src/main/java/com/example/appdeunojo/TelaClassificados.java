@@ -40,7 +40,7 @@ public class TelaClassificados extends AppCompatActivity {
 
         spFiltroCategoria = findViewById(R.id.spFiltroCategoria);
 
-        AnuncioControle ac = new AnuncioControle(this);
+        //AnuncioControle ac = new AnuncioControle(this);
         listView = findViewById(R.id.lsttodos);
 
 
@@ -63,7 +63,7 @@ public class TelaClassificados extends AppCompatActivity {
 
             }
         });
-        spFiltroCategoria.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+       /* spFiltroCategoria.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 // 0=Todas, 1 = eletronicos, 2 = veiculos,3 = imoveis, 4 = moda, 5 = outros
@@ -98,7 +98,7 @@ public class TelaClassificados extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {}
         });
-
+        */
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

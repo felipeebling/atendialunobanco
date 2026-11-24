@@ -32,9 +32,9 @@ public class telaItemAnuncio extends AppCompatActivity {
         }
         String[] vetor = dados.split("\n");
 
-        AnuncioControle ac = new AnuncioControle(this);
-        String resultado =  ac.consultaPorId(vetor[0]);
-        String[] vetorResultado = resultado.split("\n");
+        //nuncioControle ac = new AnuncioControle(this);
+       // String resultado =  ac.consultaPorId(vetor[0]);
+      //  String[] vetorResultado = resultado.split("\n");
 
         tvCategoria = findViewById(R.id.tvDetalheCategoria);
         tvTitulo = findViewById(R.id.tvDetalheTitulo);
@@ -42,11 +42,11 @@ public class telaItemAnuncio extends AppCompatActivity {
         tvData = findViewById(R.id.tvDetalheData);
         tvDescricao = findViewById(R.id.tvDetalheDescricao);
 
-        tvCategoria.setText(vetorResultado[1]);
-        tvTitulo.setText(vetorResultado[2]);
-        tvPreco.setText(vetorResultado[3]);
-        tvData.setText(vetorResultado[7]);
-        tvDescricao.setText(vetorResultado[4]);
+       // tvCategoria.setText(vetorResultado[1]);
+       // tvTitulo.setText(vetorResultado[2]);
+       // tvPreco.setText(vetorResultado[3]);
+       // tvData.setText(vetorResultado[7]);
+       // tvDescricao.setText(vetorResultado[4]);
 
     }
 }

@@ -15,6 +15,8 @@ import androidx.core.view.WindowInsetsCompat;
 public class TelaHome extends AppCompatActivity {
     private Button btnUsuarios, btnPerfil, btnNovoAgendamento, btnAcompanhamentos, btnCancelarProximo;
     private TextView tvsaudacao, tipo, descricao;
+    private TextView tvDashAgendados, tvDashRealizados, tvDashCancelados;
+    private Professores pf = new Professores();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,6 @@ public class TelaHome extends AppCompatActivity {
             return insets;
         });
 
-        Professores pf = new Professores();
         if (getIntent().getSerializableExtra("professor") != null) {
             pf = (Professores) getIntent().getSerializableExtra("professor");
         }
@@ -35,6 +36,10 @@ public class TelaHome extends AppCompatActivity {
         tipo = findViewById(R.id.txtTipo);
         descricao = findViewById(R.id.txtInfos);
         tvsaudacao = findViewById(R.id.tvSaudacao);
+
+        tvDashAgendados = findViewById(R.id.tvDashAgendados);
+        tvDashRealizados = findViewById(R.id.tvDashRealizados);
+        tvDashCancelados = findViewById(R.id.tvDashCancelados);
 
         btnUsuarios = findViewById(R.id.btnUsuarios);
         btnPerfil = findViewById(R.id.btnPerfil);
@@ -58,11 +63,14 @@ public class TelaHome extends AppCompatActivity {
         } else {
             tipo.setText("Sem atendimentos");
             descricao.setText("Nenhum atendimento agendado.");
-
         }
 
         btnUsuarios.setOnClickListener(v -> startActivity(new Intent(this, TelaGerenciarUsuarios.class)));
-        btnPerfil.setOnClickListener(v -> Toast.makeText(this, "Meu Perfil", Toast.LENGTH_SHORT).show());
+        btnPerfil.setOnClickListener(v -> {
+            Intent intent = new Intent(this, TelaPerfil.class);
+            intent.putExtra("professor", pf);
+            startActivity(intent);
+        });
         btnNovoAgendamento.setOnClickListener(v -> startActivity(new Intent(this, TelaNovoAtendimento.class)));
         btnAcompanhamentos.setOnClickListener(v -> startActivity(new Intent(this, TelaHistoricoAtendimentos.class)));
         btnCancelarProximo.setOnClickListener(v -> startActivity(new Intent(this, TelaCancelarAtendimento.class)));

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Meu Perfil"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginBottom="32dp"/>
+
+    <TextView
+        android:id="@+id/tvPerfilNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nome: "
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tvPerfilEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email: "
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tvPerfilIdentificacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Identificação: "
+        android:textSize="18sp"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnVoltarPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar"/>
+
+</LinearLayout>

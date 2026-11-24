@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TelaHistoricoAtendimentos extends AppCompatActivity {
-    private EditText etPesquisarHistorico;
+    private EditText etPesquisarHistorico, etFiltroData;
+    private Spinner spFiltroSituacao;
     private ListView lvHistorico;
 
     @Override
@@ -31,7 +33,11 @@ public class TelaHistoricoAtendimentos extends AppCompatActivity {
         });
 
         etPesquisarHistorico = findViewById(R.id.etPesquisarHistorico);
+        etFiltroData = findViewById(R.id.etFiltroData);
+        spFiltroSituacao = findViewById(R.id.spFiltroSituacao);
         lvHistorico = findViewById(R.id.lvHistorico);
+
+        carregarFiltros();
 
         List<String> amostra = new ArrayList<>();
         amostra.add("Ana Souza · Banco de Dados\nRealizado · 05/11 · 14h\nConsultar resultado ›");
@@ -44,5 +50,11 @@ public class TelaHistoricoAtendimentos extends AppCompatActivity {
             Intent intent = new Intent(this, TelaDetalhesAtendimento.class);
             startActivity(intent);
         });
+    }
+
+    private void carregarFiltros() {
+        String[] situacoes = {"Todas", "Agendado", "Realizado", "Cancelado"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, situacoes);
+        spFiltroSituacao.setAdapter(adapter);
     }
 }

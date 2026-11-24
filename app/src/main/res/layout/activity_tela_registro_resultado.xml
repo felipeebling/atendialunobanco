@@ -30,34 +30,11 @@
             android:textSize="12sp"
             android:layout_marginBottom="4dp" />
 
-        <RadioGroup
-            android:id="@+id/rgSituacao"
+        <Spinner
+            android:id="@+id/spSituacaoFinal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="12dp">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Realizado conforme o previsto"
-                android:checked="true" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Realizado parcialmente" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Estudante não compareceu" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cancelado" />
-        </RadioGroup>
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -68,7 +45,7 @@
             android:layout_marginBottom="4dp" />
 
         <EditText
-            android:id="@+id/etConteudo"
+            android:id="@+id/etConteudoTratado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Descreva o conteúdo tratado..."
@@ -79,16 +56,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Atividades realizadas *"
+            android:text="Observações do atendimento *"
             android:textStyle="bold"
             android:textSize="12sp"
             android:layout_marginBottom="4dp" />
 
         <EditText
-            android:id="@+id/etAtividades"
+            android:id="@+id/etObservacoesResultado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Descreva as atividades realizadas..."
+            android:hint="Descreva as observações..."
             android:inputType="textMultiLine"
             android:lines="3"
             android:layout_marginBottom="24dp" />

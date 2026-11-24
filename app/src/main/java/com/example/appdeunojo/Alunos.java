@@ -4,10 +4,9 @@ import java.io.Serializable;
 
 public class Alunos implements Serializable {
 
-    private  String nome;
-    private  int id;
-    private String senha;
-
+    private String nome;
+    private int id;
+    private String turma;
     private String email;
 
     public String getNome() {
@@ -26,12 +25,12 @@ public class Alunos implements Serializable {
         this.id = id;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getTurma() {
+        return turma;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setTurma(String turma) {
+        this.turma = turma;
     }
 
     public String getEmail() {
@@ -42,10 +41,11 @@ public class Alunos implements Serializable {
         this.email = email;
     }
 
-    public Alunos(String email, String nome, String senha) {
+    public Alunos(String email, String nome, String turma) {
         this.email = email;
         this.nome = nome;
-        this.senha = senha;
+        this.turma = turma;
     }
-    public Alunos(){}
+
+    public Alunos() {}
 }

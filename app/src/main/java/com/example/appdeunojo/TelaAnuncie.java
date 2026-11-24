@@ -69,16 +69,16 @@ public class TelaAnuncie extends AppCompatActivity {
 
 
         Anuncio anuncio = new Anuncio(categoria, titulo, preco, descricao, contato, situacao, dataAtual);
-        AnuncioControle c = new AnuncioControle(this);
+        //AnuncioControle c = new AnuncioControle(this);
 
-        if (c.insereAnuncio(anuncio)){
-            Toast.makeText(this, "Anúncio salvo com sucesso!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+        //if (c.insereAnuncio(anuncio)){
+          //  Toast.makeText(this, "Anúncio salvo com sucesso!", Toast.LENGTH_SHORT).show();
+          //  Intent intent = new Intent(this, MainActivity.class);
+           // startActivity(intent);
 
-        }else{
-            Toast.makeText(this, "Erro ao salvar anúncio", Toast.LENGTH_SHORT).show();
-        }
+       // }else{
+       //     Toast.makeText(this, "Erro ao salvar anúncio", Toast.LENGTH_SHORT).show();
+      //  }
 
 
 

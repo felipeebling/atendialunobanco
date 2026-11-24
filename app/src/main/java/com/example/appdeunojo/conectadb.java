@@ -8,7 +8,7 @@ public class conectadb extends SQLiteOpenHelper {
 
     String tabprof = "CREATE TABLE IF NOT EXISTS professores (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, senha TEXT, nome TEXT, identificacao_institucional TEXT);";
 
-    String tabalu = "CREATE TABLE IF NOT EXISTS alunos (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, senha TEXT, nome TEXT);";
+    String tabalu = "CREATE TABLE IF NOT EXISTS alunos (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, turma TEXT, nome TEXT);";
 
     String tabAtendi = "CREATE TABLE IF NOT EXISTS atendimentos (\n" +
             "    id INTEGER PRIMARY KEY AUTOINCREMENT,\n" +

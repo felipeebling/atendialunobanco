@@ -11,45 +11,41 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Histórico e Acompanhamento"
+        android:text="Acompanhamentos"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#018D3E"
-        android:layout_marginBottom="12dp" />
+        android:layout_marginBottom="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <Spinner
+            android:id="@+id/spFiltroSituacao"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp" />
+
+        <EditText
+            android:id="@+id/etFiltroData"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:hint="Data (ex: 14/11)"
+            android:inputType="date" />
+    </LinearLayout>
 
     <EditText
         android:id="@+id/etPesquisarHistorico"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Pesquisar registros..."
+        android:hint="Pesquisar por aluno ou disciplina..."
         android:inputType="text"
-        android:layout_marginBottom="12dp" />
-
-    <RadioGroup
-        android:id="@+id/rgFiltroHistorico"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Todos"
-            android:checked="true"
-            android:layout_marginEnd="16dp" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Realizados"
-            android:layout_marginEnd="16dp" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cancelados" />
-    </RadioGroup>
+        android:layout_marginBottom="16dp" />
 
     <ListView
         android:id="@+id/lvHistorico"

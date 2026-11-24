@@ -11,54 +11,53 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Usuários"
+        android:text="Gerenciar Alunos"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#018D3E"
         android:layout_marginBottom="12dp" />
 
-    <Button
-        android:id="@+id/btnCadastrarNovoUsuario"
+    <EditText
+        android:id="@+id/etNomeAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cadastrar novo usuário"
-        android:backgroundTint="#018D3E"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="12dp" />
+        android:hint="Nome completo do Aluno"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="8dp" />
 
     <EditText
-        android:id="@+id/etBuscarUsuario"
+        android:id="@+id/etEmailAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Buscar usuário por nome ou matrícula…"
+        android:hint="E-mail do Aluno"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/etTurmaAluno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Turma / Matrícula"
         android:inputType="text"
         android:layout_marginBottom="12dp" />
 
-    <RadioGroup
-        android:id="@+id/rgFiltroUsuarios"
+    <Button
+        android:id="@+id/btnCadastrarAluno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
+        android:text="Cadastrar Aluno"
+        android:backgroundTint="#018D3E"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp" />
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Todos"
-            android:checked="true"
-            android:layout_marginEnd="16dp" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Professores"
-            android:layout_marginEnd="16dp" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Alunos" />
-    </RadioGroup>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alunos Cadastrados"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#018D3E"
+        android:layout_marginBottom="8dp" />
 
     <ListView
         android:id="@+id/lvUsuarios"

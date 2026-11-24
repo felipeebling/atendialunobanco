@@ -13,12 +13,12 @@ public class AtendimentosController {
     }
 
     public Atendimentos ProximoAtendimento(Professores pf) {
-        if (pf == null) return null;
+
 
         String sql = "SELECT atendimentos.id, atendimentos.aluno_id, alunos.nome, atendimentos.data_prevista, atendimentos.hora_prevista, atendimentos.descricao, atendimentos.local_link, atendimentos.tipo " +
                 "FROM atendimentos, alunos " +
                 "WHERE atendimentos.aluno_id = alunos.id AND atendimentos.professor_id = " + pf.getId() + " AND atendimentos.situacao = 'AGENDADO' AND atendimentos.data_prevista >= date('now') " +
-                "ORDER BY atendimentos.data_prevista ASC, atendimentos.hora_prevista ASC LIMIT 1";
+                "ORDER BY atendimentos.data_prevista ASC, atendimentos.hora_prevista ASC LIMIT 1 ; ";
 
         try {
             SQLiteDatabase bd = banco.getReadableDatabase();
@@ -49,4 +49,66 @@ public class AtendimentosController {
 
         return null;
     }
+
+    public boolean insereAtendimento(Atendimentos at) {
+
+        String slq = "INSERT INTO Atendimentos " +
+                "(aluno_id,professor_id,data_prevista,hora_prevista,duracao,tipo,modalidade,descricao,situacao) "
+                + "VALUES ('"+at.getAlunoId()+"','"+at.getProfessorId() +"','"+at.getDataPrevista() +"','"+at.getHoraPrevista()
+                +"','"+at.getDuracao() +"','"+at.getTipo()+"','"+at.getModalidade() +"','"+at.getDescricao()+"','"+at.getSituacao() +"'); ";
+
+        try {
+            SQLiteDatabase db = banco.getWritableDatabase();
+            db.execSQL(slq);
+            db.close();
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
+
+
+    }
+
+    public boolean AlteraAtendimento(Atendimentos at) {
+
+        String slq = "UPDATE Atendimentos SET " +
+                "aluno_id = '" + at.getAlunoId() + "', " +
+                "professor_id = '" + at.getProfessorId() + "', " +
+                "data_prevista = '" + at.getDataPrevista() + "', " +
+                "hora_prevista = '" + at.getHoraPrevista() + "', " +
+                "duracao = '" + at.getDuracao() + "', " +
+                "tipo = '" + at.getTipo() + "', " +
+                "modalidade = '" + at.getModalidade() + "', " +
+                "descricao = '" + at.getDescricao() + "', " +
+                "situacao = '" + at.getSituacao() + "' " +
+                "WHERE id = " + at.getId() + ";";
+
+        try {
+            SQLiteDatabase db = banco.getWritableDatabase();
+            db.execSQL(slq);
+            db.close();
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+
+    public boolean CancelarAtendimento(Atendimentos at) {
+        String slq = "UPDATE Atendimentos SET situacao = 'CANCELADO' WHERE id = " + at.getId() + ";";
+
+        try {
+            SQLiteDatabase db = banco.getWritableDatabase();
+            db.execSQL(slq);
+            db.close();
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+
+
+
+
+
+
 }

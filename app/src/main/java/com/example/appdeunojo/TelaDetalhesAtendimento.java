@@ -12,7 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class TelaDetalhesAtendimento extends AppCompatActivity {
-    private Button btnEditarAtendimento, btnCancelarAtendimento;
+    private Button btnEditarAtendimento, btnCancelarAtendimento, btnRegistrarResultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +27,16 @@ public class TelaDetalhesAtendimento extends AppCompatActivity {
 
         btnEditarAtendimento = findViewById(R.id.btnEditarAtendimento);
         btnCancelarAtendimento = findViewById(R.id.btnCancelarAtendimento);
+        btnRegistrarResultado = findViewById(R.id.btnRegistrarResultado);
 
-        btnEditarAtendimento.setOnClickListener(v -> Toast.makeText(this, "Modo de edição", Toast.LENGTH_SHORT).show());
+        btnEditarAtendimento.setOnClickListener(v -> {
+            Intent intent = new Intent(this, TelaNovoAtendimento.class);
+            // Aqui passamos a intenção de edição (poderá ser recuperado na TelaNovoAtendimento depois)
+            intent.putExtra("modoEdicao", true);
+            startActivity(intent);
+        });
+        
+        btnRegistrarResultado.setOnClickListener(v -> startActivity(new Intent(this, TelaRegistroResultado.class)));
         btnCancelarAtendimento.setOnClickListener(v -> startActivity(new Intent(this, TelaCancelarAtendimento.class)));
     }
 }

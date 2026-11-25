@@ -2,6 +2,7 @@ package com.example.appdeunojo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,6 +62,7 @@ public class TelaHome extends AppCompatActivity {
                     + "No " + proximo.getLocalLink();
             descricao.setText(info);
         } else {
+            btnCancelarProximo.setVisibility(View.INVISIBLE);
             tipo.setText("Sem atendimentos");
             descricao.setText("Nenhum atendimento agendado.");
         }
@@ -70,9 +72,19 @@ public class TelaHome extends AppCompatActivity {
             Intent intent = new Intent(this, TelaPerfil.class);
             intent.putExtra("professor", pf);
             startActivity(intent);
+
         });
         btnNovoAgendamento.setOnClickListener(v -> startActivity(new Intent(this, TelaNovoAtendimento.class)));
         btnAcompanhamentos.setOnClickListener(v -> startActivity(new Intent(this, TelaHistoricoAtendimentos.class)));
-        btnCancelarProximo.setOnClickListener(v -> startActivity(new Intent(this, TelaCancelarAtendimento.class)));
+
+        btnCancelarProximo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TelaHome.this, TelaCancelarAtendimento.class);
+                 i.putExtra("atendimento",proximo);
+
+            }
+        });
+
     }
 }

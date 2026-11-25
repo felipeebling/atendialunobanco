@@ -63,7 +63,7 @@ public class ProfessoresController implements Serializable {
         }
     }
 
-    public void atualizaProf(Professores pf) {
+    public boolean atualizaProf(Professores pf) {
         String ATUALIZA_USUARIO = "UPDATE professores SET email = '" + pf.getEmail() + "', " +
                 "senha ='" + pf.getSenha() + "', nome = '" + pf.getNome() + "', " +
                 "identificacao_institucional = '" + pf.getIdentificacaoInstitucional() + "' WHERE id = " + pf.getId();
@@ -71,7 +71,9 @@ public class ProfessoresController implements Serializable {
             SQLiteDatabase db = banco.getWritableDatabase();
             db.execSQL(ATUALIZA_USUARIO);
             db.close();
+            return true;
         } catch (Exception ex) {
+            return false;
         }
     }
 

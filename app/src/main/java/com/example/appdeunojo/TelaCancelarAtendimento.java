@@ -1,5 +1,6 @@
 package com.example.appdeunojo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +27,9 @@ public class TelaCancelarAtendimento extends AppCompatActivity {
             return insets;
         });
 
+        Atendimentos at = (Atendimentos) getIntent().getSerializableExtra("atendimento");
+        AtendimentosController ac = new AtendimentosController(this);
+
         etMotivoCancelamento = findViewById(R.id.etMotivoCancelamento);
         btnConfirmarCancelamento = findViewById(R.id.btnConfirmarCancelamento);
         btnManterAtendimento = findViewById(R.id.btnManterAtendimento);
@@ -36,8 +40,16 @@ public class TelaCancelarAtendimento extends AppCompatActivity {
                 Toast.makeText(this, "Informe o motivo do cancelamento!", Toast.LENGTH_SHORT).show();
                 return;
             }
-            Toast.makeText(this, "Atendimento cancelado com sucesso.", Toast.LENGTH_SHORT).show();
-            finish();
+
+            if (ac.CancelarAtendimento(at) ){
+                Intent i = new Intent(TelaCancelarAtendimento.this, TelaHome.class);
+                Toast.makeText(this, "Atendimento cancelado com sucesso.", Toast.LENGTH_SHORT).show();
+                startActivity(i);
+            }else{
+                Toast.makeText(this, "Erro ao cancelar atendimento", Toast.LENGTH_SHORT).show();
+            }
+
+
         });
 
         btnManterAtendimento.setOnClickListener(v -> finish());

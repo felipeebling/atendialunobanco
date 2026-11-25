@@ -65,10 +65,15 @@ public class TelaNovoAtendimento extends AppCompatActivity {
     private void carregarAlunos() {
         List<Alunos> alunosList = alunosController.ConsultaAlunos();
         List<String> nomes = new ArrayList<>();
+
         if (alunosList != null) {
             for (Alunos al : alunosList) {
                 nomes.add(al.getNome());
             }
+        }else{
+
+            nomes.add("Nenhum Aluno encontrado");
+
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, nomes);
         spEstudantes.setAdapter(adapter);

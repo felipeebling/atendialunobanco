@@ -57,8 +57,8 @@ public class TelaClassificados extends AppCompatActivity {
         btVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TelaClassificados.this, MainActivity.class);
-                startActivity(intent);
+               // Intent intent = new Intent(TelaClassificados.this, MainActivity.class);
+               // startActivity(intent);
                 finish();
 
             }

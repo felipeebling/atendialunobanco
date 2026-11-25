@@ -4,7 +4,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-public class AtendimentosController {
+import java.io.Serializable;
+
+public class AtendimentosController implements Serializable {
     private SQLiteDatabase db;
     private conectadb banco;
 

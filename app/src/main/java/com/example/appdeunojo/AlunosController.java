@@ -40,14 +40,16 @@ public class AlunosController implements Serializable {
         }
     }
 
-    public void atualizaAluno(Alunos al) {
+    public boolean atualizaAluno(Alunos al) {
         String atualiza = "UPDATE alunos SET email = '" + al.getEmail() + "', " +
                 "turma = '" + al.getTurma() + "', nome = '" + al.getNome() + "'" + " WHERE id = " + al.getId();
         try {
             SQLiteDatabase db = banco.getWritableDatabase();
             db.execSQL(atualiza);
             db.close();
+            return true;
         } catch (Exception ex) {
+            return false;
         }
     }
 
@@ -76,6 +78,21 @@ public class AlunosController implements Serializable {
             return lista;
         } catch (Exception ex) {
             return null;
+        }
+    }
+
+
+
+    public boolean atualizaAlunoEmail(Alunos al) {
+        String atualiza = "UPDATE alunos SET email = '" + al.getEmail() + "', " +
+                "turma = '" + al.getTurma() + "', nome = '" + al.getNome() + "'" + " WHERE email = '" + al.getEmail() +"'" ;
+        try {
+            SQLiteDatabase db = banco.getWritableDatabase();
+            db.execSQL(atualiza);
+            db.close();
+            return true;
+        } catch (Exception ex) {
+            return false;
         }
     }
 }

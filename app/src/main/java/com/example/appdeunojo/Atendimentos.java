@@ -1,7 +1,9 @@
 package com.example.appdeunojo;
 
 
-public class Atendimentos {
+import java.io.Serializable;
+
+public class Atendimentos implements Serializable  {
 
     private int id;
     private int professorId;

@@ -50,6 +50,16 @@
         android:textColor="#FFFFFF"
         android:layout_marginBottom="16dp" />
 
+    <Button
+        android:id="@+id/btnSalvaAlteracao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#018D3E"
+        android:text="Salvar Aluno"
+        android:textColor="#FFFFFF"
+        android:visibility="invisible" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
